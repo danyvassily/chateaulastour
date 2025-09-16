@@ -73,7 +73,7 @@ export function WineCard({ wine }: WineCardProps) {
   }, [candidates.length])
 
   return (
-    <Card className="group relative overflow-hidden rounded-xl border bg-white shadow-sm hover:shadow-md transition-all duration-300 mx-auto max-w-[320px] border-t-4 border-wine-burgundy">
+    <Card className="group relative overflow-hidden rounded-xl border bg-white shadow-sm hover:shadow-md transition-all duration-300 mx-auto max-w-full sm:max-w-[320px] border-t-4 border-wine-burgundy">
       <div className="aspect-[3/4] bg-white overflow-hidden p-6">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

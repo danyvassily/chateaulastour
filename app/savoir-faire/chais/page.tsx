@@ -201,7 +201,7 @@ export default function ChaisPage() {
 
             <Card className="overflow-hidden">
               <div className="aspect-[4/3] bg-muted">
-                <img src="/wine-blending-tasting-room.png" alt="Assemblage" className="w-full h-full object-cover" />
+                <img src="/wine-pressing-grapes-traditional-press.png" alt="Assemblage" className="w-full h-full object-cover" />
               </div>
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
@@ -243,7 +243,7 @@ export default function ChaisPage() {
 
             <Card className="overflow-hidden">
               <div className="aspect-[4/3] bg-muted">
-                <img src="/wine-barrel-maintenance-cellar.png" alt="Ouillage" className="w-full h-full object-cover" />
+                <img src="/french-chateau-wine-cellar.png" alt="Ouillage" className="w-full h-full object-cover" />
               </div>
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">

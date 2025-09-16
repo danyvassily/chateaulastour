@@ -244,3 +244,65 @@ small { font-size: 0.750rem; }
     transform: none !important;
   }
 }
+
+/* Responsive improvements for tablets and mobile */
+@media (max-width: 768px) {
+  /* Fix text overflow on mobile */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Improve padding on mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Fix button sizes on mobile */
+  button, .btn {
+    min-height: 44px; /* Minimum touch target size */
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Improve readability on mobile */
+  body {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  /* Fix horizontal scrolling issues */
+  body, html {
+    overflow-x: hidden;
+  }
+  
+  /* Adjust hero text size */
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+}
+
+/* Tablet specific styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Optimize layout for tablets */
+  .container {
+    max-width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  /* Adjust grid layouts for tablets */
+  .grid-cols-2 {
+    gap: 1.5rem;
+  }
+  
+  /* Better touch targets for tablets */
+  a, button {
+    min-height: 48px;
+  }
+}
+
+/* Fix image paths for production */
+img[src^="/photos/"],
+img[src^="/Page/"] {
+  display: none; /* Hide broken images */
+}

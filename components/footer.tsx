@@ -7,10 +7,10 @@ import Image from "next/image"
 export function Footer() {
   return (
     <footer className="bg-wine-dark text-white">
-      <div className="container mx-auto px-4 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12 items-start lg:items-center">
           {/* Logo & Description */}
-          <div className="lg:col-span-3 text-center lg:text-left">
+          <div className="md:col-span-2 lg:col-span-3 text-center md:text-left">
             <Link href="/" className="inline-block mb-6">
               <Image
                 src="/logo-chateau-lastours.png" // Assurez-vous d'avoir ce logo
@@ -26,8 +26,8 @@ export function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div className="lg:col-span-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
+          <div className="md:col-span-2 lg:col-span-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-left">
               <div>
                 <h4 className="font-heading text-lg mb-4 text-white/90">Le Domaine</h4>
                 <nav className="flex flex-col space-y-3">
@@ -64,7 +64,7 @@ export function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="lg:col-span-3">
+          <div className="md:col-span-2 lg:col-span-3 mt-8 md:mt-0">
             <h4 className="font-heading text-lg mb-4 text-white/90">Restez informés</h4>
             <p className="text-sm text-white/70 mb-4">Actualités, primeurs et offres exclusives.</p>
             <div className="flex space-x-2">
@@ -80,7 +80,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center text-sm text-white/60">
+        <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-white/60">
           <p className="mb-4 md:mb-0">© {new Date().getFullYear()} Châteaux Lastours. Tous droits réservés.</p>
           <div className="flex items-center space-x-6">
             <div className="flex space-x-4">

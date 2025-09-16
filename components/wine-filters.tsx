@@ -44,9 +44,9 @@ export function WineFilters({ onFiltersChange }: WineFiltersProps) {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col lg:flex-row gap-4">
+      <div className="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row gap-3 sm:gap-4">
         <Select value={filters.collection} onValueChange={(value) => updateFilters("collection", value)}>
-          <SelectTrigger className="w-full lg:w-48">
+          <SelectTrigger className="w-full sm:w-auto lg:w-48">
             <SelectValue placeholder="Collection" />
           </SelectTrigger>
           <SelectContent>
@@ -58,7 +58,7 @@ export function WineFilters({ onFiltersChange }: WineFiltersProps) {
         </Select>
 
         <Select value={filters.type} onValueChange={(value) => updateFilters("type", value)}>
-          <SelectTrigger className="w-full lg:w-48">
+          <SelectTrigger className="w-full sm:w-auto lg:w-48">
             <SelectValue placeholder="Type de vin" />
           </SelectTrigger>
           <SelectContent>
@@ -71,7 +71,7 @@ export function WineFilters({ onFiltersChange }: WineFiltersProps) {
         </Select>
 
         <Select value={filters.priceRange} onValueChange={(value) => updateFilters("priceRange", value)}>
-          <SelectTrigger className="w-full lg:w-48">
+          <SelectTrigger className="w-full sm:w-auto lg:w-48">
             <SelectValue placeholder="Prix" />
           </SelectTrigger>
           <SelectContent>
@@ -84,7 +84,7 @@ export function WineFilters({ onFiltersChange }: WineFiltersProps) {
         </Select>
 
         <Select value={filters.sortBy} onValueChange={(value) => updateFilters("sortBy", value)}>
-          <SelectTrigger className="w-full lg:w-48">
+          <SelectTrigger className="w-full sm:w-auto lg:w-48">
             <SelectValue placeholder="Trier par" />
           </SelectTrigger>
           <SelectContent>

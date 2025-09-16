@@ -101,11 +101,11 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-[0.15] pointer-events-none grain"></div>
 
         {/* Contenu Hero - Style maquette : bas à gauche de l'écran - Remonté de 30% */}
-        <div className="absolute bottom-[20vh] left-8 lg:left-16 z-10 text-left text-white max-w-4xl">
-          <h1 className="text-8xl md:text-9xl lg:text-[12rem] xl:text-[14rem] font-serif font-light mb-6 hero-title leading-[0.8] tracking-tight">
+        <div className="absolute bottom-[15vh] sm:bottom-[20vh] left-4 sm:left-8 lg:left-16 z-10 text-left text-white max-w-full sm:max-w-3xl lg:max-w-4xl px-4 sm:px-0">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[12rem] font-serif font-light mb-4 sm:mb-6 hero-title leading-[0.8] tracking-tight">
             Vin d'aujourd'hui
           </h1>
-          <p className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-light italic mb-16 hero-title opacity-90 tracking-tight leading-[0.9]">
+          <p className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-light italic mb-8 sm:mb-12 lg:mb-16 hero-title opacity-90 tracking-tight leading-[0.9]">
             depuis 1579
           </p>
           <div className="hero-button">
@@ -113,7 +113,7 @@ export default function HomePage() {
               size="lg"
               variant="outline"
               asChild
-              className="group bg-transparent text-white border-white hover:bg-white hover:text-black transition-all duration-300 px-12 py-6 text-lg font-light tracking-[0.3em] uppercase min-w-[400px]"
+              className="group bg-transparent text-white border-white hover:bg-white hover:text-black transition-all duration-300 px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 text-sm sm:text-base lg:text-lg font-light tracking-[0.2em] sm:tracking-[0.3em] uppercase min-w-[250px] sm:min-w-[350px] lg:min-w-[400px]"
             >
               <Link href="/savoir-faire" aria-label="Découvrez notre savoir-faire">
                 Découvrez notre savoir-faire
@@ -123,7 +123,7 @@ export default function HomePage() {
         </div>
         
         {/* Scroll Indicator - Style maquette */}
-        <div className="absolute bottom-8 right-8 z-10">
+        <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 z-10">
           <div className="w-12 h-12 border border-white/40 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/10 transition-all duration-300">
             <ArrowRight className="w-5 h-5 text-white rotate-90" />
           </div>

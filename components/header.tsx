@@ -33,10 +33,10 @@ export function Header() {
             : "bg-white/90 backdrop-blur-sm border-b border-gray-200/30 shadow-sm"
         }`}
       >
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 relative">
-          {/* Left Navigation - Desktop */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          {/* Left Navigation - Desktop & Tablet */}
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <div className="relative">
               <button 
                 className="flex items-center space-x-1 transition-all duration-300 text-base font-medium tracking-wide text-slate-800 hover:text-slate-600"
@@ -78,8 +78,8 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Right Navigation & Actions - Desktop */}
-          <div className="hidden lg:flex items-center space-x-8">
+          {/* Right Navigation & Actions - Desktop & Tablet */}
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <div className="relative">
               <button 
                 className="transition-all duration-300 text-base font-medium tracking-wide text-slate-800 hover:text-slate-600"
@@ -111,7 +111,7 @@ export function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-2">
             <CartSheet />
             <UserMenu />
             <button
@@ -125,7 +125,7 @@ export function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border bg-background/95 backdrop-blur-sm text-lg">
+          <div className="md:hidden py-4 border-t border-border bg-background/95 backdrop-blur-sm text-base sm:text-lg">
             <nav className="flex flex-col space-y-1">
               <Link href="/domaine/histoire" className="px-3 py-2 rounded hover:bg-accent/10">
                 Le Domaine — Histoire
@@ -263,7 +263,7 @@ export function Header() {
               <div className="space-y-6">
                 <div className="relative h-48 bg-gradient-to-b from-slate-200 to-slate-300 rounded-lg overflow-hidden">
                   <Image
-                    src="/photos/007.jpg"
+                    src="/wine-pressing-grapes-traditional-press.png"
                     alt="Château Lastours"
                     fill
                     className="object-cover"
@@ -330,7 +330,7 @@ export function Header() {
               <div className="space-y-6">
                 <div className="relative h-48 bg-gradient-to-b from-slate-200 to-slate-300 rounded-lg overflow-hidden">
                   <Image
-                    src="/Page/La vigne - ok/la véraison .jpg"
+                    src="/french-chateau-vineyard-landscape-with-rolling-hil.png"
                     alt="Vignoble"
                     fill
                     className="object-cover"
@@ -421,7 +421,7 @@ export function Header() {
               <div className="space-y-6">
                 <div className="relative h-48 bg-gradient-to-b from-slate-200 to-slate-300 rounded-lg overflow-hidden">
                   <Image
-                    src="/photos/lastours017.jpg"
+                    src="/luxury-french-chateau-vineyard-at-sunset-with-roll.png"
                     alt="Expériences"
                     fill
                     className="object-cover"

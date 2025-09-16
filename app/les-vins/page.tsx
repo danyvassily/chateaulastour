@@ -24,15 +24,15 @@ export default function WinesPageSimple() {
       {/* Hero Section with Barrels Animation */}
       <section className="relative h-screen overflow-hidden">
         <HeroBarrelsAnimation className="absolute inset-0">
-          <div className="relative z-20 text-center text-white px-4 lg:px-8">
+          <div className="relative z-20 text-center text-white px-4 md:px-6 lg:px-8">
             <CinematicTextAnimation className="space-y-8" staggerDelay={0.2}>
               <div className="text-line">
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight tracking-wider text-shadow-lg drop-shadow-2xl">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold leading-tight tracking-wider text-shadow-lg drop-shadow-2xl">
                   Collections d'Exception
                 </h1>
               </div>
               <div className="text-line">
-                <p className="text-2xl md:text-3xl lg:text-4xl font-light max-w-5xl mx-auto leading-relaxed opacity-95 text-shadow drop-shadow-lg">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light max-w-5xl mx-auto leading-relaxed opacity-95 text-shadow drop-shadow-lg">
                   Découvrez nos gammes de vins d'exception, chacune révélant l'essence unique de notre terroir gaillacois
                 </p>
               </div>
@@ -54,8 +54,8 @@ export default function WinesPageSimple() {
               <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/95 via-black/90 to-gray-900/95 backdrop-blur-md transition-all duration-700 group border border-gray-700/30" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05)' }}>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
                 
-                <div className="relative grid lg:grid-cols-2 items-center">
-                  <div className="p-12 lg:p-16">
+                <div className="relative grid md:grid-cols-1 lg:grid-cols-2 items-center">
+                  <div className="p-8 sm:p-12 lg:p-16">
                     <ScrollAnimation animation="fadeIn" delay={0.2}>
                       <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm text-gray-300 rounded-full text-sm font-medium mb-6 border border-white/20">
                         Collection Signature
@@ -63,13 +63,13 @@ export default function WinesPageSimple() {
                     </ScrollAnimation>
                     
                     <ScrollAnimation animation="slideUp" delay={0.4}>
-                      <h2 className="text-4xl lg:text-5xl font-serif font-bold mb-6 text-white tracking-wider">
+                      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-6 text-white tracking-wider">
                         Doméni
                       </h2>
                     </ScrollAnimation>
                     
                     <ScrollAnimation animation="fadeIn" delay={0.6}>
-                      <p className="text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 font-light">
+                      <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 font-light">
                         L'expression pure du terroir gaillacois. Cette collection incarne l'authenticité de nos cépages autochtones, révélant la typicité de notre terroir avec élégance et caractère.
                       </p>
                     </ScrollAnimation>
@@ -96,7 +96,7 @@ export default function WinesPageSimple() {
                   </div>
                 
                   <ScrollAnimation animation="slideLeft" delay={0.8}>
-                    <div className="relative h-96 lg:h-[500px] p-4">
+                    <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] p-4">
                       <Image
                         src="/PHOTOS-WEB-LASTOURS/BOUTEILLES/par-gamme/Gamme Domeni.jpg"
                         alt="Gamme Doméni - Bouteilles"
@@ -116,7 +116,7 @@ export default function WinesPageSimple() {
                 <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/95 via-black/90 to-gray-900/95 backdrop-blur-md transition-all duration-700 group border border-gray-700/30" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05)' }}>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
                   
-                  <div className="relative grid lg:grid-cols-2 items-center">
+                  <div className="relative grid md:grid-cols-1 lg:grid-cols-2 items-center">
                     <div className="relative h-96 lg:h-[500px] order-2 lg:order-1 p-4">
                       <Image
                         src="/PHOTOS-WEB-LASTOURS/BOUTEILLES/par-gamme/Gamme Opus.jpg"
@@ -131,11 +131,11 @@ export default function WinesPageSimple() {
                         Prestige Absolu
                       </div>
                       
-                      <h2 className="text-4xl lg:text-5xl font-serif font-bold mb-6 text-white tracking-wider">
+                      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-6 text-white tracking-wider">
                         Opus
                       </h2>
                       
-                      <p className="text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 font-light">
+                      <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 font-light">
                         L'excellence absolue. Nos cuvées les plus prestigieuses, issues de nos parcelles d'exception et élevées avec un soin méticuleux pour révéler toute la noblesse de notre terroir.
                       </p>
                       
@@ -162,8 +162,8 @@ export default function WinesPageSimple() {
                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/95 via-black/90 to-gray-900/95 backdrop-blur-md transition-all duration-700 group border border-gray-700/30" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05)' }}>
                    <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
                    
-                   <div className="relative grid lg:grid-cols-2 items-center">
-                     <div className="p-12 lg:p-16">
+                   <div className="relative grid md:grid-cols-1 lg:grid-cols-2 items-center">
+                     <div className="p-8 sm:p-12 lg:p-16">
                        <ScrollAnimation animation="fadeIn" delay={0.2}>
                          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm text-gray-300 rounded-full text-sm font-medium mb-6 border border-white/20">
                            Tradition Ancestrale
@@ -171,13 +171,13 @@ export default function WinesPageSimple() {
                        </ScrollAnimation>
                        
                        <ScrollAnimation animation="slideUp" delay={0.4}>
-                         <h2 className="text-4xl lg:text-5xl font-serif font-bold mb-6 text-white tracking-wider">
+                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-6 text-white tracking-wider">
                            Méthode Traditionnelle
                          </h2>
                        </ScrollAnimation>
                        
                        <ScrollAnimation animation="fadeIn" delay={0.6}>
-                         <p className="text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 font-light">
+                         <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 font-light">
                            L'art de l'effervescence selon nos traditions. Élaborés selon la méthode ancestrale gaillacoise, ces vins pétillants révèlent toute la finesse de notre savoir-faire.
                          </p>
                        </ScrollAnimation>
@@ -204,7 +204,7 @@ export default function WinesPageSimple() {
                      </div>
                      
                      <ScrollAnimation animation="slideRight" delay={0.8}>
-                       <div className="relative h-96 lg:h-[500px] p-4">
+                       <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] p-4">
                          <Image
                            src="/PHOTOS-WEB-LASTOURS/BOUTEILLES/par-gamme/Gamme M‚thode.jpg"
                            alt="Gamme Méthode Traditionnelle - Bouteilles"
@@ -222,7 +222,7 @@ export default function WinesPageSimple() {
                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/95 via-black/90 to-gray-900/95 backdrop-blur-md transition-all duration-700 group border border-gray-700/30" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05)' }}>
                    <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
                    
-                   <div className="relative grid lg:grid-cols-2 items-center">
+                   <div className="relative grid md:grid-cols-1 lg:grid-cols-2 items-center">
                      <ScrollAnimation animation="slideLeft" delay={0.2}>
                        <div className="relative h-96 lg:h-[500px] order-2 lg:order-1 p-4">
                          <Image
@@ -242,13 +242,13 @@ export default function WinesPageSimple() {
                        </ScrollAnimation>
                        
                        <ScrollAnimation animation="slideUp" delay={0.6}>
-                         <h2 className="text-4xl lg:text-5xl font-serif font-bold mb-6 text-white tracking-wider">
+                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-6 text-white tracking-wider">
                            Poussin
                          </h2>
                        </ScrollAnimation>
                        
                        <ScrollAnimation animation="fadeIn" delay={0.8}>
-                         <p className="text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 font-light">
+                         <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 font-light">
                            Fraîcheur et gourmandise. Cette collection accessible invite à la découverte de nos terroirs avec des vins aux profils tendres et expressifs.
                          </p>
                        </ScrollAnimation>
@@ -276,8 +276,8 @@ export default function WinesPageSimple() {
                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/95 via-black/90 to-gray-900/95 backdrop-blur-md transition-all duration-700 group border border-gray-700/30" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05)' }}>
                    <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
                    
-                   <div className="relative grid lg:grid-cols-2 items-center">
-                     <div className="p-12 lg:p-16">
+                   <div className="relative grid md:grid-cols-1 lg:grid-cols-2 items-center">
+                     <div className="p-8 sm:p-12 lg:p-16">
                        <ScrollAnimation animation="fadeIn" delay={0.2}>
                          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm text-gray-300 rounded-full text-sm font-medium mb-6 border border-white/20">
                            Cuvées d'Exception
@@ -285,13 +285,13 @@ export default function WinesPageSimple() {
                        </ScrollAnimation>
                        
                        <ScrollAnimation animation="slideUp" delay={0.4}>
-                         <h2 className="text-4xl lg:text-5xl font-serif font-bold mb-6 text-white tracking-wider">
+                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-6 text-white tracking-wider">
                            Signatures
                          </h2>
                        </ScrollAnimation>
                        
                        <ScrollAnimation animation="fadeIn" delay={0.6}>
-                         <p className="text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 font-light">
+                         <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mb-8 font-light">
                            Cuvées rares et mystérieuses. Chacune raconte une histoire unique, fruit d'une sélection parcellaire minutieuse et d'un élevage sur mesure.
                          </p>
                        </ScrollAnimation>
@@ -318,7 +318,7 @@ export default function WinesPageSimple() {
                      </div>
                      
                      <ScrollAnimation animation="slideRight" delay={0.8}>
-                       <div className="relative h-96 lg:h-[500px] p-4">
+                       <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] p-4">
                          <Image
                            src="/PHOTOS-WEB-LASTOURS/BOUTEILLES/par-gamme/Gamme Confidentielle.jpg"
                            alt="Gamme Signatures - Bouteilles"
