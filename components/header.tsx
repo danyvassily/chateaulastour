@@ -7,14 +7,17 @@ import { Menu, X, ChevronDown } from "lucide-react"
 import { CartSheet } from "./cart-sheet"
 import { UserMenu } from "./user-menu"
 import { TransitionLink } from "./gsap/TransitionLink"
+import { useDeviceType } from "@/hooks/use-mobile"
 // No GSAP for header color toggle; we use scroll listener for reliability
 import Image from "next/image"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null)
+  const [activeTabletMenu, setActiveTabletMenu] = useState<string | null>(null)
   const headerRef = useRef<HTMLHeadingElement | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const { isMobile, isTablet, isDesktop } = useDeviceType()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -22,6 +25,31 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  // Fermer les menus tablettes quand on clique en dehors
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (activeTabletMenu && headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setActiveTabletMenu(null)
+      }
+    }
+
+    if (activeTabletMenu) {
+      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('touchstart', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [activeTabletMenu])
+
+  // Fermer les menus quand on change de taille d'écran
+  useEffect(() => {
+    setActiveTabletMenu(null)
+    setIsMenuOpen(false)
+  }, [isMobile, isTablet, isDesktop])
 
   return (
     <>
@@ -78,6 +106,60 @@ export function Header() {
             </Link>
           </div>
 
+          {/* Tablet Navigation */}
+          <nav className="hidden md:flex lg:hidden items-center space-x-6 tablet-nav">
+            <div className="relative">
+              <button 
+                className="flex items-center space-x-1 transition-all duration-300 text-sm font-medium tracking-wide text-slate-800 hover:text-slate-600 touch-manipulation py-2 px-3 rounded-md hover:bg-slate-100"
+                onClick={() => setActiveTabletMenu(activeTabletMenu === 'domaine' ? null : 'domaine')}
+              >
+                <span>Le Domaine</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeTabletMenu === 'domaine' ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+
+            <div className="relative">
+              <button 
+                className="flex items-center space-x-1 transition-all duration-300 text-sm font-medium tracking-wide text-slate-800 hover:text-slate-600 touch-manipulation py-2 px-3 rounded-md hover:bg-slate-100"
+                onClick={() => setActiveTabletMenu(activeTabletMenu === 'savoir-faire' ? null : 'savoir-faire')}
+              >
+                <span>Savoir-Faire</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeTabletMenu === 'savoir-faire' ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+
+            <TransitionLink 
+              href="/les-vins" 
+              className="transition-all duration-300 text-sm font-medium tracking-wide text-slate-800 hover:text-slate-600 touch-manipulation py-2 px-3 rounded-md hover:bg-slate-100"
+            >
+              Nos Vins
+            </TransitionLink>
+
+            <div className="relative">
+              <button 
+                className="transition-all duration-300 text-sm font-medium tracking-wide text-slate-800 hover:text-slate-600 touch-manipulation py-2 px-3 rounded-md hover:bg-slate-100"
+                onClick={() => setActiveTabletMenu(activeTabletMenu === 'experiences' ? null : 'experiences')}
+              >
+                <span>Expériences</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeTabletMenu === 'experiences' ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+
+            <Link 
+              href="/gastronomie" 
+              className="transition-all duration-300 text-sm font-medium tracking-wide text-slate-800 hover:text-slate-600 touch-manipulation py-2 px-3 rounded-md hover:bg-slate-100"
+            >
+              Gastronomie
+            </Link>
+
+            <Link 
+              href="/ou-nous-trouver" 
+              className="transition-all duration-300 text-sm font-medium tracking-wide text-slate-800 hover:text-slate-600 touch-manipulation py-2 px-3 rounded-md hover:bg-slate-100"
+            >
+              Contact
+            </Link>
+          </nav>
+
           {/* Right Navigation & Actions - Desktop */}
           <div className="hidden lg:flex items-center space-x-8">
             <div className="relative">
@@ -110,13 +192,19 @@ export function Header() {
             </div>
           </div>
 
+          {/* Tablet Actions */}
+          <div className="hidden md:flex lg:hidden items-center space-x-3">
+            <CartSheet />
+            <UserMenu />
+          </div>
+
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-2">
             <CartSheet />
             <UserMenu />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-black hover:bg-black/10 rounded-md transition-colors"
+              className="p-2 text-black hover:bg-black/10 rounded-md transition-colors touch-manipulation"
               aria-label="Menu de navigation"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -181,11 +269,176 @@ export function Header() {
             </nav>
           </div>
         )}
+
+        {/* Tablet Dropdown Menus */}
+        {activeTabletMenu && isTablet && (
+          <div className="md:block lg:hidden absolute top-full left-0 right-0 z-40 bg-white/98 backdrop-blur-lg border-b border-gray-200/30 shadow-lg">
+            <div className="container mx-auto px-4 py-6">
+              {activeTabletMenu === 'domaine' && (
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold tracking-wide text-slate-900">
+                      Notre Histoire
+                    </h3>
+                    <div className="space-y-2">
+                      <Link 
+                        href="/domaine/histoire" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Histoire du Domaine
+                      </Link>
+                      <Link 
+                        href="/domaine/team" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        L'Équipe
+                      </Link>
+                      <Link 
+                        href="/domaine/engagement" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Nos Engagements
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold tracking-wide text-slate-900">
+                      Notre Terroir
+                    </h3>
+                    <div className="space-y-2">
+                      <Link 
+                        href="/domaine/terroir" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Le Vignoble
+                      </Link>
+                      <Link 
+                        href="/notre-chai" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Notre Chai
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeTabletMenu === 'savoir-faire' && (
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold tracking-wide text-slate-900">
+                      La Vigne
+                    </h3>
+                    <div className="space-y-2">
+                      <Link 
+                        href="/savoir-faire/vigne" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Viticulture
+                      </Link>
+                      <Link 
+                        href="/methode-blanche" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Méthode Ancestrale
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold tracking-wide text-slate-900">
+                      Les Chais
+                    </h3>
+                    <div className="space-y-2">
+                      <Link 
+                        href="/savoir-faire/chais" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Vinification
+                      </Link>
+                      <Link 
+                        href="/degustation" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Dégustation
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeTabletMenu === 'experiences' && (
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold tracking-wide text-slate-900">
+                      Visites & Événements
+                    </h3>
+                    <div className="space-y-2">
+                      <Link 
+                        href="/reservation" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Réserver une visite
+                      </Link>
+                      <Link 
+                        href="/evenements" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Nos événements
+                      </Link>
+                      <Link 
+                        href="/evenements/organiser" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Organiser un événement
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold tracking-wide text-slate-900">
+                      Club & Mécénat
+                    </h3>
+                    <div className="space-y-2">
+                      <Link 
+                        href="/club" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Club Lastours
+                      </Link>
+                      <Link 
+                        href="/mecenat" 
+                        className="block text-sm font-medium tracking-wide transition-colors text-slate-600 hover:text-slate-900 py-2 px-3 rounded-md hover:bg-slate-100 touch-manipulation"
+                        onClick={() => setActiveTabletMenu(null)}
+                      >
+                        Mécénat
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </header>
 
     {/* Méga-menus style Ruinart */}
-    {hoveredMenu && (
+    {hoveredMenu && isDesktop && (
       <div 
         className="fixed top-20 left-0 right-0 z-40 transition-all duration-500 bg-white/98 backdrop-blur-lg border-b border-gray-200/30 shadow-lg"
         onMouseEnter={() => setHoveredMenu(hoveredMenu)}

@@ -110,17 +110,18 @@ export function WineCard({ wine }: WineCardProps) {
         <div className="flex items-center justify-between pt-4 border-t border-gray-200">
           <div className="text-xl font-heading text-wine-burgundy">{wine.price}€</div>
           <div className="flex gap-2">
-            <Button variant="outline" size="sm" asChild>
+            <Button variant="outline" size="sm" asChild className="touch-manipulation">
               <Link href={getWinePageUrl(wine)}>Découvrir</Link>
             </Button>
             <Button
               size="sm"
               disabled={!wine.inStock}
               onClick={handleAddToCart}
-              className="bg-wine-gold hover:bg-wine-gold/90"
+              className="bg-wine-gold hover:bg-wine-gold/90 touch-manipulation"
             >
               <ShoppingCart className="w-4 h-4 mr-1" />
-              {wine.inStock ? "Ajouter" : "Épuisé"}
+              <span className="hidden md:inline">{wine.inStock ? "Ajouter" : "Épuisé"}</span>
+              <span className="md:hidden">{wine.inStock ? "+" : "×"}</span>
             </Button>
           </div>
         </div>
