@@ -74,20 +74,20 @@ export default function WinesPageSimple() {
                       </p>
                     </ScrollAnimation>
                   
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                      <a href="/les-vins/domeni-blanc" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <a href="/les-vins/domeni-blanc" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                         <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                         <h3 className="text-lg font-semibold text-white mb-2">Doméni Blanc</h3>
                         <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
                       </a>
 
-                      <a href="/les-vins/domeni-rose" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                      <a href="/les-vins/domeni-rose" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                         <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                         <h3 className="text-lg font-semibold text-white mb-2">Doméni Rosé</h3>
                         <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
                       </a>
 
-                      <a href="/les-vins/domeni-rouge" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                      <a href="/les-vins/domeni-rouge" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                         <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                         <h3 className="text-lg font-semibold text-white mb-2">Doméni Rouge</h3>
                         <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
@@ -139,14 +139,14 @@ export default function WinesPageSimple() {
                         L'excellence absolue. Nos cuvées les plus prestigieuses, issues de nos parcelles d'exception et élevées avec un soin méticuleux pour révéler toute la noblesse de notre terroir.
                       </p>
                       
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <a href="/les-vins/opus-blanc" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4">
+                        <a href="/les-vins/opus-blanc" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                           <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                           <h3 className="text-lg font-semibold text-white mb-2">Opus Blanc</h3>
                           <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
                         </a>
 
-                        <a href="/les-vins/opus-rouge" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                        <a href="/les-vins/opus-rouge" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                           <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                           <h3 className="text-lg font-semibold text-white mb-2">Opus Rouge</h3>
                           <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
@@ -182,20 +182,20 @@ export default function WinesPageSimple() {
                          </p>
                        </ScrollAnimation>
                        
-                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                         <a href="/les-vins/methode-blanc" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                         <a href="/les-vins/methode-blanc" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                            <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                            <h3 className="text-lg font-semibold text-white mb-2">Méthode Blanc</h3>
                            <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
                          </a>
 
-                         <a href="/les-vins/methode-rose" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                         <a href="/les-vins/methode-rose" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                            <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                            <h3 className="text-lg font-semibold text-white mb-2">Méthode Rosé</h3>
                            <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
                          </a>
 
-                         <a href="/les-vins/perle" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                         <a href="/les-vins/perle" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                            <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                            <h3 className="text-lg font-semibold text-white mb-2">Perlé</h3>
                            <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
@@ -253,14 +253,14 @@ export default function WinesPageSimple() {
                          </p>
                        </ScrollAnimation>
                        
-                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                         <a href="/les-vins/poussin-blanc" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4">
+                         <a href="/les-vins/poussin-blanc" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                            <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                            <h3 className="text-lg font-semibold text-white mb-2">Poussin Blanc</h3>
                            <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
                          </a>
 
-                         <a href="/les-vins/poussin-rose" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                         <a href="/les-vins/poussin-rose" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                            <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                            <h3 className="text-lg font-semibold text-white mb-2">Poussin Rosé</h3>
                            <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
@@ -296,20 +296,20 @@ export default function WinesPageSimple() {
                          </p>
                        </ScrollAnimation>
                        
-                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                         <a href="/les-vins/claire-de-lune" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                         <a href="/les-vins/claire-de-lune" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                            <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                            <h3 className="text-lg font-semibold text-white mb-2">Claire de Lune</h3>
                            <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
                          </a>
 
-                         <a href="/les-vins/petrichor-rouge" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                         <a href="/les-vins/petrichor-rouge" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                            <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                            <h3 className="text-lg font-semibold text-white mb-2">Petrichor Rouge</h3>
                            <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
                          </a>
 
-                         <a href="/les-vins/pigeonnier" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20">
+                         <a href="/les-vins/pigeonnier" className="group/card bg-white/5 backdrop-blur-sm hover:bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 text-center border border-white/10 hover:border-white/20 touch-manipulation">
                            <div className="h-2 w-12 bg-gray-400 rounded-full mx-auto mb-3 opacity-60"></div>
                            <h3 className="text-lg font-semibold text-white mb-2">Pigeonnier</h3>
                            <span className="text-sm text-gray-400 font-medium group-hover/card:text-gray-300 transition-colors">Découvrir →</span>
