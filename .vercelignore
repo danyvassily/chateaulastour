@@ -1,0 +1,18 @@
+# Vercel ignore file
+# Ne pas ignorer les assets statiques
+!public/
+!public/**
+!public/photos/
+!public/photos/**
+!public/Page/
+!public/Page/**
+
+# Ignorer les fichiers de développement
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.DS_Store
+*.log
+node_modules
+.next

@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configuration pour Vercel
-  output: "standalone",
+  // Configuration optimisée pour Vercel
   experimental: {
     optimizePackageImports: ["lucide-react", "@radix-ui/react-icons"],
   },
@@ -9,7 +8,7 @@ const nextConfig = {
   // Optimisations images pour Vercel
   images: {
     formats: ["image/avif", "image/webp"],
-    domains: ["localhost"],
+    unoptimized: false,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
@@ -17,8 +16,15 @@ const nextConfig = {
         protocol: "https",
         hostname: "**.vercel.app",
       },
+      {
+        protocol: "https",
+        hostname: "chateaulastour-h6rt.vercel.app",
+      },
     ],
   },
+
+  // Configuration pour les assets statiques
+  assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
 
   // Configuration pour le déploiement initial (à améliorer ensuite)
   eslint: {
